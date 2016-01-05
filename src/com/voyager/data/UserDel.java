@@ -1,6 +1,6 @@
 package com.voyager.data;
 
-public class UserDel implements UserDao {
+public class UserDel extends UserDao {
 
 	@Override
 	public boolean Opt(UserBean user) {
