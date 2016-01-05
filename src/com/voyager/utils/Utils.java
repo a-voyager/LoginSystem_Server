@@ -8,6 +8,8 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean isUserNameQualifiedRule(String name) {
+		if (name.isEmpty())
+			return false;
 		return true;
 	}
 
@@ -18,6 +20,8 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean isUserPwdQualifiedRule(String pwd) {
+		if (pwd.isEmpty())
+			return false;
 		return true;
 	}
 }
