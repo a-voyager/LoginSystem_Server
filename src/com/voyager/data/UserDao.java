@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 public abstract class UserDao {
@@ -14,7 +15,7 @@ public abstract class UserDao {
 	/**
 	 * 数据库链接对象
 	 */
-	private Connection conn;
+	protected Connection conn;
 
 	/**
 	 * 构造函数 链接数据库
@@ -51,4 +52,30 @@ public abstract class UserDao {
 	}
 
 	public abstract boolean Opt(UserBean user);
+	
+	
+	protected void closeStatement(Statement statement) {
+		if (statement != null)
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				statement = null;
+			}
+	}
+
+	/**
+	 * 释放资源
+	 */
+	public void dispose() {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			conn = null;
+		}
+	}
+
 }
