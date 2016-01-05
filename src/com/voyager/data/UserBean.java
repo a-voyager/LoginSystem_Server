@@ -4,6 +4,14 @@ public class UserBean {
 	private String userName;
 	private String userPwd;
 
+	
+	
+	public UserBean(String userName, String userPwd) {
+		super();
+		this.userName = userName;
+		this.userPwd = userPwd;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
