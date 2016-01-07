@@ -1,6 +1,7 @@
 package com.voyager.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +35,15 @@ public class Register extends HttpServlet {
 		UserDao userPwdDao = new UserAdd();
 		boolean isSucceed = userPwdDao.Opt(new UserBean(user, pwd));
 		userPwdDao.dispose();
+		PrintWriter writer = response.getWriter();
 		if (isSucceed) {
 			response.addHeader("result", "1");
+			writer.write("×¢²á³É¹¦£¡<br>");
+		}else {
+			writer.write("±§Ç¸£¬×¢²áÊ§°Ü£¡<br>");
 		}
+		response.setHeader("refresh", "3;url=" + request.getContextPath()
+				+ "/Index.jsp");
 
 	}
 

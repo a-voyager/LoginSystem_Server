@@ -1,6 +1,7 @@
 package com.voyager.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,8 @@ public class Login extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		String userName = request.getParameter("user");
 		String userPwd = request.getParameter("pwd");
 		System.out.println("******Login: user = " + userName + "; pwd = "
@@ -32,14 +35,21 @@ public class Login extends HttpServlet {
 		}
 		UserDao userPwdDao = new UserQuery();
 		boolean isSucceed = userPwdDao.Opt(new UserBean(userName, userPwd));
+		PrintWriter writer = response.getWriter();
 		userPwdDao.dispose();
 		if (isSucceed) {
 			System.out.println("******Login succeed");
 			response.addHeader("result", "1");
+			request.getSession().setAttribute("userName", userName);
+			writer.write("登录成功！<br>");
+			response.setHeader("refresh", "3;url="+request.getContextPath()+"/Index.jsp");
 		} else {
 			System.out.println("******Login failed");
 			response.addHeader("result", "ERROR");
+			writer.write("登录失败！<br>");
+			response.setHeader("refresh", "3;url="+request.getContextPath()+"/Login.jsp");
 		}
+		writer.write("3秒后自动刷新页面...");
 	}
 
 }

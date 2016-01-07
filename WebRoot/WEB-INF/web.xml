@@ -11,6 +11,11 @@
     <servlet-name>Register</servlet-name>
     <servlet-class>com.voyager.servlet.Register</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.voyager.servlet.Logout</servlet-class>
+  </servlet>
+
 
 
   <servlet-mapping>
@@ -20,6 +25,10 @@
   <servlet-mapping>
     <servlet-name>Register</servlet-name>
     <url-pattern>/servlet/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/servlet/Logout</url-pattern>
   </servlet-mapping>
 
 </web-app>
