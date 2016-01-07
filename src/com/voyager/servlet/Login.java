@@ -36,6 +36,9 @@ public class Login extends HttpServlet {
 		if (isSucceed) {
 			System.out.println("******Login succeed");
 			response.addHeader("result", "1");
+		} else {
+			System.out.println("******Login failed");
+			response.addHeader("result", "ERROR");
 		}
 	}
 

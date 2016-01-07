@@ -29,8 +29,8 @@ public class UserQuery extends UserDao {
 			while (set.next()) {
 				String name = set.getString("name");
 				String pwd = set.getString("pwd");
-				System.out.println("name = " + name + "; pwd = " + pwd);
 				if (name.equals(inputName) && pwd.equals(inputPwd)) {
+					System.out.println("name = " + name + "; pwd = " + pwd);
 					System.out.println("√‹¬Î’˝»∑£°");
 					flag = true;
 					break;
