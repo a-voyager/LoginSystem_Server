@@ -16,7 +16,7 @@ public class Logout extends HttpServlet {
 				|| request.getSession().getAttribute("userName") != null) {
 			request.getSession().invalidate(); // …±À¿Session
 		}
-		response.sendRedirect(request.getContextPath() + "/Index.jsp");
+		response.sendRedirect(request.getContextPath() + "/index.jsp");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -43,7 +43,7 @@ public class Register extends HttpServlet {
 			writer.write("±§Ç¸£¬×¢²áÊ§°Ü£¡<br>");
 		}
 		response.setHeader("refresh", "3;url=" + request.getContextPath()
-				+ "/Index.jsp");
+				+ "/index.jsp");
 
 	}
 

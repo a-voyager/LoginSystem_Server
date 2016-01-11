@@ -42,12 +42,12 @@ public class Login extends HttpServlet {
 			response.addHeader("result", "1");
 			request.getSession().setAttribute("userName", userName);
 			writer.write("登录成功！<br>");
-			response.setHeader("refresh", "3;url="+request.getContextPath()+"/Index.jsp");
+			response.setHeader("refresh", "3;url="+request.getContextPath()+"/index.jsp");
 		} else {
 			System.out.println("******Login failed");
 			response.addHeader("result", "ERROR");
 			writer.write("登录失败！<br>");
-			response.setHeader("refresh", "3;url="+request.getContextPath()+"/Login.jsp");
+			response.setHeader("refresh", "3;url="+request.getContextPath()+"/login.jsp");
 		}
 		writer.write("3秒后自动刷新页面...");
 	}
