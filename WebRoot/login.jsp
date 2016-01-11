@@ -3,19 +3,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>注册</title>
-
-
+<title>登录</title>
 </head>
 
 <body>
-	<form action="${pageContext.request.contextPath}/servlet/Register"
+	<form action="${pageContext.request.contextPath}/servlet/login"
 		method="post" onsubmit="return check(this)">
-		新账户：<input type="text" name="user" width="60px" /> <br>新密码：<input
+		账户：<input type="text" name="user" width="60px" /> <br>密码：<input
 			type="password" name="pwd" width="60px" /> <br> <input
-			type="submit" value="提交" />
+			type="submit" value="确认" id="ok" />
 	</form>
-
 </body>
 <script type="text/javascript">
 	function check(form) {

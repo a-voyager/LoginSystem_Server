@@ -18,8 +18,8 @@
 		if (user == null) {
 	%>
 	欢迎游客光临！
-	<a href="${pageContext.request.contextPath}/Login.jsp">登录</a>
-	<a href="${pageContext.request.contextPath}/Register.jsp">注册</a>
+	<a href="${pageContext.request.contextPath}/login.jsp">登录</a>
+	<a href="${pageContext.request.contextPath}/register.jsp">注册</a>
 	<%
 		} else {
 	%>
