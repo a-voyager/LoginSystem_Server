@@ -9,7 +9,7 @@
 <body>
 	<form action="${pageContext.request.contextPath}/servlet/Login"
 		method="post" onsubmit="return check(this)">
-		账户：<input type="text" name="user" width="60px" /> <br>密码：<input
+		账户：<input type="text" name="user" width="60px" /> <br> 密码：<input
 			type="password" name="pwd" width="60px" /> <br> <input
 			type="submit" value="确认" id="ok" />
 	</form>
