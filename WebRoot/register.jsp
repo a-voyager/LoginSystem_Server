@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="${pageContext.request.contextPath}/servlet/register"
+	<form action="${pageContext.request.contextPath}/servlet/Register"
 		method="post" onsubmit="return check(this)">
 		新账户：<input type="text" name="user" width="60px" /> <br>新密码：<input
 			type="password" name="pwd" width="60px" /> <br> <input
